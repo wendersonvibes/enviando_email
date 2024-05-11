@@ -1,0 +1,6 @@
+itens th, itens td{
+    padding: 4px; 
+    text-align: center; 
+    font-weight:bold;
+    border: 1.5px solid #000; 
+}

@@ -1,0 +1,18 @@
+{% extends "modelo.html" %}
+{% load static %}
+
+{% block 'title' %}início{% endblock 'title' %}
+
+{% block 'content' %}
+    <div class="container d-flex justify-content-center mt-5">
+        <div class="d-flex flex-column gap-3 w-25">
+            <a href="{% url 'envia-email' %}" class="btn btn-primary">Enviar email</a>
+            <a href="{% url 'gerar-pdf' %}" target='_blank' class="btn btn-primary">Gerar PDF (reportlab)</a>
+            <a href="{% url 'html-to-pdf' %}" target='_blank' class="btn btn-primary">Converter para pdf (xhtml2pdf)</a>
+            <a href="{% url 'curriculo' %}" target='_blank' class="btn btn-primary">Mostrar currículo</a>
+            <hr>
+            <a href="{% url 'page' %}" target='_blank' class="btn btn-primary">Abrir página</a>
+            <a href="{% url 'pdfkit-generate' %}" target='_blank' class="btn btn-primary">Gerar PDF(pdfkit)</a>
+        </div>
+    </div>
+{% endblock 'content' %}

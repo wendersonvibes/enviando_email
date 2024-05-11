@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @page {
+        size: a4 portrait;
+        @frame header_frame {
+          /* Static Frame */
+          -pdf-frame-content: header_content;
+          left: 50pt;
+          width: 512pt;
+          top: 20pt;
+          height: 40pt;
+        }
+        @frame content_frame {
+          /* Content Frame */
+          left: 50pt;
+          width: 512pt;
+          top: 60pt;
+          height: 632pt;
+        }
+        @frame footer_frame {
+          /* Another static Frame */
+          -pdf-frame-content: footer_content;
+          left: 50pt;
+          width: 512pt;
+          top: 780pt;
+          height: 20pt;
+        }
+      }
+      
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .justify {
+        text-align: justify;
+      }
+      
+      body {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      
+      tbody tr td {
+        padding-top: 4px;
+        text-align: center;
+        border: 1.5px solid #000;
+      }
+      
+      tbody tr th {
+        padding-top: 4px;
+        text-align: center;
+        font-weight: bold;
+        border: 1.5px solid #000;
+        background-color: #c0ced6;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <header>
+      {% include 'pdf/header.html' %}
+    </header>
+
+    <p class="justify red-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Proposta comercial</th>
+          <td>{{ idade.0 }}</td>
+        </tr>
+        <tr>
+          <th>Ana</th>
+          <td>{{ idade.1 }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </body>
+</html>
