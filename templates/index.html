@@ -7,8 +7,25 @@
     <div class="container d-flex justify-content-center mt-5">
         <div class="d-flex flex-column gap-3 w-25">
             <a href="{% url 'envia-email' %}" class="btn btn-primary">Enviar email</a>
-            <a href="{% url 'html-to-pdf' %}" target='_blank' class="btn btn-primary">Converter para pdf (xhtml2pdf)</a>
+            <a href="{% url 'html-to-pdf' %}" target='_blank' class="btn btn-primary">Converter para pdf (xhtml2pdf) e enviar no email</a>
             <a href="{% url 'curriculo' %}" target='_blank' class="btn btn-primary">Mostrar currículo</a>
         </div>
     </div>
+
+    <div class="container d-flex justify-content-center mt-5">
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="cep">Informe o CEP</label>
+            <input type="text" name="cep">
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    
+        <div class="container">
+            {{ response.cep }}
+            {{ response.localidade }}
+        </div>
+    
 {% endblock 'content' %}
